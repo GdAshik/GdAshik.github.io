@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajjadul Hassan Muhit - Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #555;
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: #e9ecef;
+        }
+        nav .logo { font-weight: 800; font-size: 1.5rem; }
+        nav .links a { text-decoration: none; color: var(--text-main); margin-left: 20px; font-weight: 500; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* --- Profile Section --- */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            background: #ccc;
+        }
+        .profile-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        h1 { margin-bottom: 5px; font-size: 2.2rem; }
+        .bio { max-width: 700px; margin: 0 auto 40px; color: var(--text-muted); font-size: 1rem; }
+
+        /* --- CONTACT GRID (FIXED) --- */
+        .section-title { margin-top: 60px; font-weight: 700; margin-bottom: 30px; font-size: 1.5rem; }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 15px 10px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centers icon and text together */
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover { transform: translateY(-5px); border-color: #000; box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+
+        /* This adds the missing space between the icon and text */
+        .contact-card i { 
+            font-size: 1.2rem; 
+            margin-right: 12px; /* FIXED: Proper spacing here */
+            width: 20px;
+            text-align: center;
+        }
+
+        /* --- WORK SECTION (FIXED PROJECT 1) --- */
+        .work-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            text-align: left;
+        }
+
+        .project-featured {
+            grid-column: span 2;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            gap: 30px;
+        }
+
+        /* Fixed Image Box for Project 1 */
+        .featured-img-box {
+            flex: 1;
+            height: 380px; /* Limits how tall the project image gets */
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .featured-img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ensures your logo grid fits without stretching */
+        }
+
+        .project-info { flex: 1; }
+        .project-info h3 { margin-top: 0; font-size: 1.6rem; }
+
+        /* Project 2 & 3 */
+        .project-item { background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .small-img-box { width: 100%; height: 220px; background: #eee; border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
+        .small-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Button */
+        .see-more-container { margin-top: 50px; }
+        .btn-see-more {
+            display: inline-block;
+            padding: 14px 45px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .btn-see-more:hover { opacity: 0.8; transform: scale(1.05); }
+
+        footer { background: #e9ecef; padding: 30px; text-align: center; margin-top: 60px; font-size: 0.85rem; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .project-featured { flex-direction: column; text-align: center; }
+            .featured-img-box { width: 100%; height: 280px; }
+            .work-grid { grid-template-columns: 1fr; }
+            nav { padding: 20px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Portfolio</div>
+        <div class="links">
+            <a href="#">Work</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Profile -->
+        <div class="profile-section">
+            <div class="profile-img">
+                <img src="photos/For Profile.png" alt="Sajjadul Hassan Muhit">
+            </div>
+            <h1>Sajjadul Hassan Muhit (Ashik)</h1>
+            <p style="font-weight: 700; margin-bottom: 10px;">Design Driven by Strategy. Powered by Collaboration.</p>
+            <p class="bio">We are a collective of designers and creatives dedicated to elevating brands through intentional visual storytelling. By combining our diverse strengths, we transform complex ideas into cohesive brand identities.</p>
+        </div>
+
+        <!-- Social Media Section -->
+        <h2 class="section-title">Contact with Us</h2>
+        <div class="contact-grid">
+            <a href="https://www.facebook.com/sajjadul.hassan.9480" target="_blank" class="contact-card">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/as_hik01" target="_blank" class="contact-card">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://wa.me/8801644415588" target="_blank" class="contact-card">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="#" target="_blank" class="contact-card">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+            <a href="mailto:ashikulhassan@gmail.com" class="contact-card">
+                <i class="far fa-envelope"></i> Gmail
+            </a>
+        </div>
+
+        <!-- Portfolio Section -->
+        <h2 class="section-title">Showcase of My Work</h2>
+        <div class="work-grid">
+            
+            <!-- Project 1 (The fixed section) -->
+            <div class="project-featured">
+                <div class="featured-img-box">
+                    <!-- Put your big logo grid image name here -->
+                    <img src="photos/558.jpg" alt="Logo Grid Project">
+                </div>
+                <div class="project-info">
+                    <h3>M Tech Mine – Smart Technology Solutions</h3>
+                    <p>A The M Tech Mine logo symbolizes innovation and growth through modern design and circuit elements, representing expertise in technology and a commitment to building smart, reliable solutions.</p>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-item">
+                <div class="small-img-box">
+                    <img src="photos/1.jpg" alt="Project 2">
+                </div>
+                <h3>B.Bling</h3>
+                <p>Bold, modern branding with a stylish edge.
+Designed to stand out and shine with confidence.</p>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-item">
+                <div class="small-img-box">
+                    <img src="photos/2.jpg" alt="Project 3">
+                </div>
+                <h3>SDI – Superior Design Innovation</h3>
+                <p>reative and innovative design solutions for modern brands.
+Turning ideas into strong, professional visual identities.</p>
+            </div>
+
+        </div>
+
+        <div class="see-more-container">
+            <a href="#" class="btn-see-more">See More</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Sajjadul Hassan. All Rights Reserved
+    </footer>
+
+</body>
+</html>
