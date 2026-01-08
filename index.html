@@ -161,7 +161,11 @@
         @media (max-width: 768px) {
             .project-featured { flex-direction: column; text-align: center; }
             .featured-img-box { width: 100%; height: 280px; }
-            .work-grid { grid-template-columns: 1fr; }
+            .work-grid { 
+                display: flex; 
+                flex-direction: column; 
+                gap: 30px; 
+            } /* Changed to flex column on mobile to ensure projects stack vertically in a line */
             nav { padding: 20px 5%; }
         }
     </style>
@@ -240,7 +244,7 @@ Designed to stand out and shine with confidence.</p>
                     <img src="photos/2.jpg" alt="Project 3">
                 </div>
                 <h3>SDI – Superior Design Innovation</h3>
-                <p>reative and innovative design solutions for modern brands.
+                <p>Creative and innovative design solutions for modern brands.
 Turning ideas into strong, professional visual identities.</p>
             </div>
 
